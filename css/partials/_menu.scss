@@ -9,6 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 15vh;
 }
 
 .nav-menu {
@@ -24,10 +25,14 @@ header {
   li {
     margin-left: 24px;
   }
+
+  @include responsive() {
+    display: none;
+  }
 }
 
 .logo {
-  max-width: 88px;
+  max-width: 50px;
 }
 
 .nav-link {
@@ -40,6 +45,14 @@ header {
   position: relative;
   color: $gray-3;
   transition: 0.7s ease;
+
+  &.red {
+    color: $red-dark;
+
+    &:hover {
+      color: $red-light;
+    }
+  }
 
   &::after {
     content: "";
@@ -64,10 +77,26 @@ header {
   }
 }
 
+.bx {
+  width: 48px;
+  height: 48px;
+  background-color: $white;
+  border-radius: 8px;
+  display: none;
+
+  @include responsive() {
+    display: block;
+  }
+}
+
 .nav-social {
   display: flex;
   align-items: center;
   height: 30px;
+
+  @include responsive() {
+    display: none;
+  }
 
   svg {
     cursor: pointer;
@@ -82,11 +111,11 @@ header {
     }
 
     &:hover {
+      transform: translate3d(0, -3px, 0);
       path,
       circle {
         fill: $red-light;
       }
-      transform: translate3d(0, -3px, 0);
     }
   }
 }

@@ -5,7 +5,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  overflow: hidden;
+  height: 80vh;
+
+  @include responsive() {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .container-item-1 {
@@ -15,12 +20,26 @@
   align-items: flex-start;
 }
 
-.container-item-2 {
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .spider-man {
-  width: 150%;
-  transform: translate3d(-150px, 0, 0);
+  width: 125%;
+  transform: translate3d(-100px, 0, 0);
+
+  @include responsive() {
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .btn {
@@ -101,15 +120,67 @@
     left: -1px;
 
     width: 0%;
-    height: 101%;
+    height: 105%;
     transition: 0.7s ease;
 
     background: linear-gradient(225deg, #ea1d22 0%, #b31317 100%);
   }
 
   &:hover {
+    transform: skewX(-10deg) scale(1.05); //olhar o que aconteceu
     &::after {
       width: 101%;
     }
   }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+
+    background: linear-gradient(
+      90deg,
+      #0b0c10 23.96%,
+      rgba(11, 12, 16, 0.8) 54.09%,
+      #0c0c10 77.6%
+    );
+  }
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: linear-gradient(225deg, $red 0%, $red-dark 100%);
 }
