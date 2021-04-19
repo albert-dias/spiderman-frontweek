@@ -9,7 +9,16 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400&display=swap" rel="stylesheet">
-  <script src="js/svg-inject.min.js"></script>
+  <!--<script src="js/svg-inject.min.js"></script>-->
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" ></script>
+  <script>
+    window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "edc906bb-9d3f-4874-b3f5-74342e680c90",
+        });
+      });
+  </script>
 </head>
 <body>
   <section class="bg-loader">
@@ -80,7 +89,9 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
   <scrip src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></scrip>
   <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>  <script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" ></script>
+  <script>
     $(".js-tilt").tilt({
       perspective: 2000,
       scale: 1.03,
