@@ -18,8 +18,11 @@
       appId: "edc906bb-9d3f-4874-b3f5-74342e680c90",
     });
 
-     OneSignal.showNativePrompt();
-     OneSignal.setDefaultNotificationUrl("https://albert-dias.github.io/spiderman-frontweek/");
+    OneSignal.showNativePrompt();
+    OneSignal.setDefaultNotificationUrl("https://albert-dias.github.io/spiderman-frontweek/");
+    OneSignal.on('permissionPromptDisplay', function () {
+      console.log("The prompt displayed");
+    });
   });
 </script>s
 </head>
