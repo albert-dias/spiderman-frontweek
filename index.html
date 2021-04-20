@@ -12,13 +12,14 @@
   <script src="js/svg-inject.min.js"></script>
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
-  var OneSignal = OneSignal || [];
+  window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({
       appId: "edc906bb-9d3f-4874-b3f5-74342e680c90",
     });
 
-    OneSignal.showNativePrompt();
+     OneSignal.showNativePrompt();
+     OneSignal.setDefaultNotificationUrl("https://albert-dias.github.io/spiderman-frontweek/");
   });
 </script>s
 </head>
